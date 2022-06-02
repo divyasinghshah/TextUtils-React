@@ -52,11 +52,11 @@ export default function TextForm(props) {
 
                         </textarea>
                     </div>
-                    <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
-                    <button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to Lowercase</button>
-                    <button className="btn btn-primary mx-2" onClick={handleClearClick}>Clear Text</button>
-                    <button className="btn btn-primary mx-2" onClick={handleCopyClick}>Copy Text</button>
-                    <button className="btn btn-primary mx-2" onClick={handleSpaceClick}>Remove Extra Spaces</button>
+                    <button className={`btn btn-${props.red==='red'?'danger':'primary'} mx-2`} onClick={handleUpClick}>Convert to Uppercase</button>
+                    <button className={`btn btn-${props.red==='red'?'danger':'primary'} mx-2`} onClick={handleLoClick}>Convert to Lowercase</button>
+                    <button className={`btn btn-${props.red==='red'?'danger':'primary'} mx-2`} onClick={handleClearClick}>Clear Text</button>
+                    <button className={`btn btn-${props.red==='red'?'danger':'primary'} mx-2`} onClick={handleCopyClick}>Copy Text</button>
+                    <button className={`btn btn-${props.red==='red'?'danger':'primary'} mx-2`} onClick={handleSpaceClick}>Remove Extra Spaces</button>
 
                 </div>
 

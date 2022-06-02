@@ -9,6 +9,7 @@ import Alert from './components/Alert';
 
 function App() {
   const [mode, setmode] = useState('light');
+  const [redMode, setredMode] = useState('light');
   const [alert, setalert] = useState(null);
   const showAlert=(message,type)=>{
     setalert({
@@ -32,13 +33,30 @@ function App() {
       showAlert("Light Mode has been enabled","success");
     }
   }
+
+  const toggleRed=()=>{
+    if(redMode==='light'){
+      setredMode('red');
+      document.body.style.backgroundColor='#d7a5a5';
+      showAlert("Red Mode has been enabled","success");
+      
+    }
+    else{
+      setredMode('light');
+      document.body.style.backgroundColor='white';
+
+    }
+    console.log("red");
+
+  }
+
   return (
     <>
       
-      <Navbar title="Divya" aboutText="About Text" mode={mode} toggleMode={toggleMode}/>
+      <Navbar title="Divya" aboutText="About Text" mode={mode} toggleMode={toggleMode} toggleRed={toggleRed}/>
       <Alert alert={alert}/>
       {/* <Navbar/> */}
-      <TextForm showAlert={showAlert} heading="Enter Text below" mode={mode}/>
+      <TextForm showAlert={showAlert} heading="Enter Text below" mode={mode} red={redMode} />
       {/* <About/> */}
     </>
     
